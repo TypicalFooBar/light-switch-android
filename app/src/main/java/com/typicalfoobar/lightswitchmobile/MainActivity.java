@@ -1,7 +1,6 @@
 package com.typicalfoobar.lightswitchmobile;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        refreshLightSwitchList();
+    }
+
+    public void refreshLightSwitchList() {
+        // The main scroll view linear layout
+        final LinearLayout mainScrollViewLinearLayout = (LinearLayout)findViewById(R.id.mainScrollViewLinearLayout);
+
+        // Clear the current view
+        mainScrollViewLinearLayout.removeAllViews();
+
         // TODO: Make this a setting
         String lightSwitchServerBaseUrl = "http://192.168.1.108";
 
@@ -52,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         for (LightSwitch lightSwitch : lightSwitchList) {
                             LightSwitchImageButton lightSwitchImageButton = new LightSwitchImageButton(context, lightSwitch);
 
-                            LinearLayout mainScrollViewLinearLayout = (LinearLayout)findViewById(R.id.mainScrollViewLinearLayout);
                             mainScrollViewLinearLayout.addView(lightSwitchImageButton);
                         }
                     }
@@ -81,8 +89,11 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+        else if (id == R.id.action_refresh) {
+            refreshLightSwitchList();
             return true;
         }
 
