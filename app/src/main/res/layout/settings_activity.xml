@@ -17,8 +17,15 @@
             <com.typicalfoobar.lightswitchmobile.uicomponent.LightSwitchEditListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/lightSwitchEditListView">
             </com.typicalfoobar.lightswitchmobile.uicomponent.LightSwitchEditListView>
+
+            <com.typicalfoobar.lightswitchmobile.uicomponent.LightSwitchServerSettingsView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lightSwitchServerSettingsView">
+            </com.typicalfoobar.lightswitchmobile.uicomponent.LightSwitchServerSettingsView>
 
         </LinearLayout>
     </ScrollView>

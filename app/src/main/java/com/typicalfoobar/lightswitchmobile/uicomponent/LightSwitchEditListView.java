@@ -10,18 +10,23 @@ import com.typicalfoobar.lightswitchmobile.model.LightSwitch;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LightSwitchEditListView extends LinearLayout {
+public class LightSwitchEditListView extends SettingsSectionView {
     private ArrayList<LightSwitchEditView> lightSwitchEditViews = new ArrayList<>();
 
     public LightSwitchEditListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
 
-        inflate(getContext(), R.layout.light_switch_edit_list_view, this);
+        if (isInEditMode())
+        {
+            return;
+        }
+
+        setTitle("Outlets");
     }
 
     public void setLightSwitchList(List<LightSwitch> lightSwitchList) {
         // Get the LinearLayout that we'll be adding the views to
-        LinearLayout lightSwitchNamesLinearLayout = (LinearLayout) findViewById(R.id.lightSwitchNamesLinearLayout);
+        LinearLayout lightSwitchNamesLinearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
         // Clear the layout first
         lightSwitchNamesLinearLayout.removeAllViews();

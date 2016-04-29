@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{lightSwitch.name}"
                 android:textColor="@color/text"
+                android:backgroundTint="#606060"
                 android:singleLine="true"
                 android:inputType="textCapWords"
                 android:addTextChangedListener="@{lightSwitch.nameTextWatcher}"/>
