@@ -34,4 +34,10 @@ public class SettingsSectionView extends LinearLayout {
         // Set the binding
         this.binding.setTitle(title);
     }
+
+    protected LinearLayout getContentView() {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+
+        return linearLayout;
+    }
 }

@@ -3,9 +3,7 @@ package com.typicalfoobar.lightswitchmobile.model;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/**
- * Created by derek on 4/20/16.
- */
+
 public class LightSwitch {
     public int id;
     public String name;
@@ -16,6 +14,7 @@ public class LightSwitch {
     public boolean isEdited() {
         return this.isEdited;
     }
+
 
     public TextWatcher nameTextWatcher = new TextWatcher() {
         @Override
