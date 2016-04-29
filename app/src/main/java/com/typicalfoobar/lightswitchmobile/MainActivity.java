@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
         refreshLightSwitchList();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        refreshLightSwitchList();
+    }
+
     public void refreshLightSwitchList() {
         // The main scroll view linear layout
         final LinearLayout mainScrollViewLinearLayout = (LinearLayout)findViewById(R.id.mainScrollViewLinearLayout);
