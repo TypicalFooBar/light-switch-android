@@ -34,7 +34,7 @@ public class LightSwitchImageButton extends LinearLayout {
         setImageResource();
 
         // Show the name of the light switch
-        this.textView.setText(lightSwitch.name);
+        textView.setText(lightSwitch.name);
 
         // Set the onClickListener
         this.setOnClickListener(new View.OnClickListener() {

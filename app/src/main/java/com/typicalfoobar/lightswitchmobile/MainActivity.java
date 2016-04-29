@@ -1,9 +1,10 @@
 package com.typicalfoobar.lightswitchmobile;
 
 import android.content.Context;
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.typicalfoobar.lightswitchmobile.databinding.MainActivityBinding;
 import com.typicalfoobar.lightswitchmobile.model.LightSwitch;
 import com.typicalfoobar.lightswitchmobile.uicomponent.LightSwitchImageButton;
 
@@ -26,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.main_activity);
 
         refreshLightSwitchList();
     }
@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
         else if (id == R.id.action_refresh) {
